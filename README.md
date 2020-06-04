@@ -19,8 +19,9 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-``` bash
+
 ## 1.什么是闭包
+``` bash
 闭包是'函数的‘局部变量’集合。只是这个局部变量是可以在函数返回后被访问。'
 #例子5：每次函数调用的时候创建一个新的闭包
 # function newClosure(someNum, someRef) {
