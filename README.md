@@ -50,3 +50,25 @@ closure2(-10);// num:990 anArray[1,2,3,990] ref:'someVar closure2'
 
 3、vue 通过数据属性的数据劫持和发布订阅的模式实现，大致可以理解成由3个模块组成，observer 完成对数据的劫持，compile 完成对模板片段的渲染，watcher 作为桥梁连接二者，订阅数据变化及更新视图
 ```
+## 3.get与post 通讯的区别
+``` bush
+1、Get 请求能缓存，Post 不能
+2、Post 相对 Get 安全一点点，因为Get 请求都包含在 URL 里，且会被浏览器保存历史纪录，Post 不会，但是在抓包的情况下都是一样的。
+
+3、Post 可以通过 request body来传输比 Get 更多的数据，Get 没有这个技术
+
+4、URL有长度限制，会影响 Get 请求，但是这个长度限制是浏览器规定的，不是 RFC 规定的
+
+5、Post 支持更多的编码类型且不对数据类型限制
+```
+## 4.模块加载AMD，CMD，CommonJS Modules/2.0 规\ES6模块与CommonJS模块的差异
+```bush
+https://www.cnblogs.com/yangguoe/p/8474173.html
+1、CommonJs 模块输出的是一个值的拷贝，ES6模块输出的是一个值的引用
+2、CommonJS 模块是运行时加载，ES6模块是编译时输出接口
+3、ES6输入的模块变量，只是一个符号链接，所以这个变量是只读的，对它进行重新赋值就会报错
+
+1、这些规范的目的都是为了 JavaScript 的模块化开发，特别是在浏览器端的
+2、对于依赖的模块，AMD 是提前执行，CMD 是延迟执行
+3、CMD 推崇依赖就近，AMD 推崇依赖前置
+```
