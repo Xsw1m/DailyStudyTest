@@ -43,7 +43,10 @@ closure2=newClosure(1000,{someVar:'closure 2'});
 closure1(5); // num:45 anArray[1,2,3,45] ref:'someVar closure1'
 closure2(-10);// num:990 anArray[1,2,3,990] ref:'someVar closure2'
 ```
-
+## 2.angular 双向数据绑定与vue数据的双向数据绑定
 ``` bash
-132
+1、二者都是 MVVM 模式开发的典型代表
+2、angular 是通过脏检测实现，angular 会将 UI 事件，请求事件，settimeout 这类延迟，的对象放入到事件监测的脏队列，当数据变化的时候，触发 $diget 方法进行数据的更新，视图的渲染
+
+3、vue 通过数据属性的数据劫持和发布订阅的模式实现，大致可以理解成由3个模块组成，observer 完成对数据的劫持，compile 完成对模板片段的渲染，watcher 作为桥梁连接二者，订阅数据变化及更新视图
 ```
