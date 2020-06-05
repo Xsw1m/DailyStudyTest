@@ -103,3 +103,14 @@ obj.addEventListener(event,function(){},bool)
 bool:false，代表冒泡阶段执行
 bool:true，代表捕获阶段执行
 ```
+## 绘画三角型
+``` bush
+.a{
+    width: 0;
+    height: 0;
+    border-width: 100px;
+    border-style: solid;
+    border-color: transparent #0099CC transparent transparent;
+    transform: rotate(90deg); /*顺时针旋转90°*/
+ }
+```
