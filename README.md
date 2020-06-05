@@ -81,3 +81,25 @@ https://www.cnblogs.com/yangguoe/p/8474173.html
 三、loader：让 webpack 能够处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后就可以利用 webpack 的打包能力，对它们进行处理。
 四、 插件（plugins）：插件的目的在于解决 loader 无法实现的其他事。
 ```
+## 6.event.target 和 event.currentTarget
+``` bush
+https://www.cnblogs.com/yzhihao/p/9398917.html
+   ||
+上面事件的绑定都是在冒泡阶段的，当我们点击最里层的元素d的时候，会依次输出:
+
+target:d&currentTarget:d
+target:d&currentTarget:c
+target:d&currentTarget:b
+target:d&currentTarget:a
+从输出中我们可以看到，event.target指向引起触发事件的元素，而event.currentTarget则是事件绑定的元素，只有被点击的那个目标元素的event.target才会等于event.currentTarget。
+
+如果我们把事件都绑定在捕获阶段，然后还是点击最里层的元素d，这时event.target还依旧会指向d，因为那是引起事件触发的元素，因为event.currentTaget指向事件绑定的元素，所以在捕获阶段，最先来到的元素是a,然后是b,接着是c,最后是d。所以输出的内容如下：
+target:d&currentTarget:a
+target:d&currentTarget:b
+target:d&currentTarget:c
+target:d&currentTarget:d
+
+obj.addEventListener(event,function(){},bool)
+bool:false，代表冒泡阶段执行
+bool:true，代表捕获阶段执行
+```
