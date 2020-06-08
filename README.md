@@ -119,3 +119,18 @@ bool:true，代表捕获阶段执行
     transform: rotate(90deg); /*顺时针旋转90°*/
  }
 ```
+## 什么是Async/Await?
+``` bush
+https://segmentfault.com/a/1190000016788484
+1. Promise虽然跳出了异步嵌套的怪圈，用链式表达更加清晰，但是我们也发现如果有大量的异步请求的时候，流程复杂的情况下，会发现充满了屏幕的then，看起来非常吃力，而ES7的Async/Await的出现就是为了解决这种复杂的情况。
+
+2. 什么是Async/Await?
+async/await是写异步代码的新方式，以前的方法有回调函数和Promise。
+async/await是基于Promise实现的，它不能用于普通的回调函数。
+async/await与Promise一样，是非阻塞的。
+async/await使得异步代码看起来像同步代码，这正是它的魔力所在。
+
+3. 
+什么是回调地狱(函数作为参数层层嵌套)
+什么是回调函数(一个函数作为参数需要依赖另一个函数执行调用)
+```
