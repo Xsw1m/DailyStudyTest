@@ -1,39 +1,78 @@
 <template>
   <div class="main">
     <div class="div1">
-      标题测试
+      <p @click="toindex('home')" style="cursor: pointer;">首页</p>
+      <div>&nbsp;  ||  &nbsp;</div>      
+      <p @click="toindex('index')" style="cursor: pointer;">目录</p>
+      <!-- <div>&nbsp;  ||  &nbsp;</div>
+      <p @click="totypescript" style="cursor: pointer;">typescript</p>
+      <div>&nbsp;  ||  &nbsp;</div>
+      <p @click="toArray" style="cursor: pointer;">数组的处理方法</p> -->
     </div>
     <div class="div2">
-      <button @click="changeTransform('Y')" style="z-index: 2;">修改Y轴</button>
-      <div class="box">
-        <div class="row"></div>
-        <div class="column"></div>
-        <div class="line" id="line"></div>
+      <div class="sidebar">
+        <div class="item">
+          <ul v-for="(item, index) in siderarray" :key="index+1">
+            <li @click="topath(item.path)" class="index_item">{{item.title}}</li>
+          </ul>
+        </div>
       </div>
-      <button @click="changeTransform('X')" style="z-index: 2;">修改X轴</button>
+      <div class="div3">
+        <router-view></router-view>
+      </div>
     </div>
+    
   </div>
 </template>
 <script>
+// for (var i=1;i<=5;i++){
+//   console.log('1', i)
+// 	setTimeout(function timer() {
+// 		console.log('2', i)
+// 	},i*1000)
+// }
+// for (var i=1;i<=5;i++){
+// 	(function(j){
+// 		setTimeout(function timer() {
+// 			console.log('3', j)
+// 		},j*1000)
+// 	})(i)
+// }
+// function func1() {
+  var a = 1
+// }
+function func2() {
+  setTimeout(() => {
+    console.log('a():', a)
+  }, 1000);
+}
+func2()
 export default {
   data () {
     return {
       title: '首页',
       x: 0,
-      y: 0
+      y: 0,
+      siderarray: [
+        {id: 1, path: 'array', title: '数组的处理方法'},
+        {id: 2, path: 'typescript', title: 'typescript'},
+        {id: 3, path: 'event', title: '事件处理方法'},
+        // {id: 4, path: 'typescript', title: 'typescript'}
+      ]
     }
   },
   methods: {
-    changeTransform (i) {
-      var a = document.getElementById('line')
-      var _this = this
-      if (i === 'X') {
-        _this.x = _this.x + 5
-        a.style.transform = 'skew(' + _this.x + 'deg,' + _this.y + 'deg)'
-      } else if (i === 'Y') {
-        _this.y = _this.y + 5
-        a.style.transform = 'skew(' + _this.x + 'deg,' + _this.y + 'deg)'
-      }
+    topath (path) {
+      this.$router.push('/' + path)
+    },
+    toindex (path) {
+      this.$router.push('/' + path)
+    },
+    toArray () {
+      this.$router.push('/array')
+    },
+    totypescript () {
+      this.$router.push('/typescript')
     }
   },
   created () {
@@ -63,41 +102,29 @@ export default {
     height: 80%;
     background: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
   }
-  .box {
+  .div3 {
+    width: calc(100% - 200px);
+    /* flex: 1; */
+    height: 100%;
+  }
+  .sidebar {
     width: 200px;
-    height: 200px;
-    background: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    background: wheat;
   }
-  .row {
-    width: 500px;
-    height: 1px;
-    transform: scaleY(0.5);
-    transform-origin: 50% 100%;
-    background: whitesmoke;
-    position: absolute;
-    z-index: 1;
+  .item {
+    width: 100%;
+    height: 50px;
+    margin-top: 10%;
   }
-  .column {
-    width: 1px;
-    height: 500px;
-    transform: scaleX(0.5);
-    transform-origin: 100% 50%;
-    background: whitesmoke;
-    position: absolute;
-    z-index: 1;
+  .item ul {
+    margin: 0;
   }
-  .line {
-    width: 100px;
-    height: 100px;
-    background: rgb(0, 0, 0);
-    transform: skew(0deg, 0deg);
-    /* transform: scaleY(0.5);
-    transform-origin: 50% 100%; */
+  ul,li{list-style-type: circle; cursor: pointer;}
+  .index_item {
+    margin: 15px 5px;
+    text-align: center;
   }
 </style>
