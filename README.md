@@ -20,8 +20,8 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 ### 目录
-* [1.什么是闭包](#1-什么是闭包)
-* [9.export和exportDefault不同](#9-export和exportDefault不同)
+* [1.什么是闭包](#1什么是闭包)
+* [9. export和exportDefault不同](#9-export和exportDefault不同)
 
 ## 1.什么是闭包
 ``` bash
@@ -144,7 +144,7 @@ async/await使得异步代码看起来像同步代码，这正是它的魔力所
 什么是回调地狱(函数作为参数层层嵌套)
 什么是回调函数(一个函数作为参数需要依赖另一个函数执行调用)
 ```
-#### 9.export和exportDefault不同
+#### 9. export和exportDefault不同
 ```
 // 第一组
 export default function crc32() { // 输出
