@@ -21,6 +21,7 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 ### 目录
 * [1.什么是闭包](#1-什么是闭包)
+* [9.export和exportDefault不同](#9-export和exportDefault不同)
 
 ## 1.什么是闭包
 ``` bash
@@ -116,7 +117,7 @@ obj.addEventListener(event,function(){},bool)
 bool:false，代表冒泡阶段执行
 bool:true，代表捕获阶段执行
 ```
-## 绘画三角型
+## 7. 绘画三角型
 ``` bush
 .a{
     width: 0;
@@ -127,7 +128,7 @@ bool:true，代表捕获阶段执行
     transform: rotate(90deg); /*顺时针旋转90°*/
  }
 ```
-## 什么是Async/Await?
+## 8.什么是Async/Await?
 [异步请求-promise](https://segmentfault.com/a/1190000016788484)
 ``` bush
 
@@ -142,4 +143,23 @@ async/await使得异步代码看起来像同步代码，这正是它的魔力所
 3. 
 什么是回调地狱(函数作为参数层层嵌套)
 什么是回调函数(一个函数作为参数需要依赖另一个函数执行调用)
+```
+#### 9.export和exportDefault不同
+```
+// 第一组
+export default function crc32() { // 输出
+  // ...
+}
+
+import crc32 from 'crc32'; // 输入
+
+// 第二组
+export function crc32() { // 输出
+  // ...
+};
+
+import {crc32} from 'crc32'; // 输入
+export default命令用于指定模块的默认输出。
+显然，一个模块只能有一个默认输出，因此export default命令只能使用一次。
+所以，import命令后面才不用加大括号，因为只可能唯一对应export default命令。
 ```
