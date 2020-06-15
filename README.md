@@ -19,6 +19,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 目录
+* [1.什么是闭包](#1-什么是闭包)
 
 ## 1.什么是闭包
 ``` bash
@@ -72,8 +74,8 @@ closure2(-10);// num:990 anArray[1,2,3,990] ref:'someVar closure2'
 5、Post 支持更多的编码类型且不对数据类型限制
 ```
 ## 4.模块加载AMD，CMD，CommonJS Modules/2.0 规\ES6模块与CommonJS模块的差异
+[AMD CMD 模块加载](https://www.cnblogs.com/yangguoe/p/8474173.html)
 ```bush
-https://www.cnblogs.com/yangguoe/p/8474173.html
 1、CommonJs 模块输出的是一个值的拷贝，ES6模块输出的是一个值的引用
 2、CommonJS 模块是运行时加载，ES6模块是编译时输出接口
 3、ES6输入的模块变量，只是一个符号链接，所以这个变量是只读的，对它进行重新赋值就会报错
@@ -82,7 +84,7 @@ https://www.cnblogs.com/yangguoe/p/8474173.html
 2、对于依赖的模块，AMD 是提前执行，CMD 是延迟执行
 3、CMD 推崇依赖就近，AMD 推崇依赖前置
 ```
-## 5.Webpack 概念
+## 5.Webpack概念
 ``` bush
 1.webpack 是一个现代 JavaScript 应用程序的静态模块打包器（module bundler）。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图（dependency graph）,其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle
 2.
@@ -93,6 +95,7 @@ https://www.cnblogs.com/yangguoe/p/8474173.html
 ```
 ## 6.event.target 和 event.currentTarget
 ``` bush
+target->  对事件的溯源
 https://www.cnblogs.com/yzhihao/p/9398917.html
    ||
 上面事件的绑定都是在冒泡阶段的，当我们点击最里层的元素d的时候，会依次输出:
@@ -125,8 +128,9 @@ bool:true，代表捕获阶段执行
  }
 ```
 ## 什么是Async/Await?
+[异步请求-promise](https://segmentfault.com/a/1190000016788484)
 ``` bush
-https://segmentfault.com/a/1190000016788484
+
 1. Promise虽然跳出了异步嵌套的怪圈，用链式表达更加清晰，但是我们也发现如果有大量的异步请求的时候，流程复杂的情况下，会发现充满了屏幕的then，看起来非常吃力，而ES7的Async/Await的出现就是为了解决这种复杂的情况。
 
 2. 什么是Async/Await?
