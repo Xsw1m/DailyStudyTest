@@ -22,6 +22,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ### 目录
 * [1.什么是闭包](#1什么是闭包)
 * [9. export和exportDefault不同](#9-export和exportDefault不同)
+* [10. 构造函数与原型对象](#10-构造函数与原型对象)
 
 ## 1.什么是闭包
 ```
@@ -167,8 +168,8 @@ export default命令用于指定模块的默认输出。
 显然，一个模块只能有一个默认输出，因此export default命令只能使用一次。
 所以，import命令后面才不用加大括号，因为只可能唯一对应export default命令。
 ```
-#### 10. 构造函数与原型对象
-## 1.5 对象原型_ proto_
+## 10. 构造函数与原型对象
+#### 1.5 对象原型_ proto_
 ```
 对象都会有一个属性_ proto_ 指向构造函数的 prototype原型对象,之所以我们对象可以使用构造函数
 prototype原型对象的属性和方法,就是因为对象有_ proto_ 原型的存在。
