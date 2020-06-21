@@ -24,6 +24,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * [9. export和exportDefault不同](#9-export和exportDefault不同)
 
 ## 1.什么是闭包
+```
+有权访问另一个函数作用域中变量的 函数。同过return 函数的方法 -> 延伸了变量的作用范围
+  1. 无论全局还是局部作用域，都可以访问局部变量，使其保留
+```
 ``` bash
 闭包是'函数的‘局部变量’集合。只是这个局部变量是可以在函数返回后被访问。'
 #例子5：每次函数调用的时候创建一个新的闭包
@@ -162,4 +166,13 @@ import {crc32} from 'crc32'; // 输入
 export default命令用于指定模块的默认输出。
 显然，一个模块只能有一个默认输出，因此export default命令只能使用一次。
 所以，import命令后面才不用加大括号，因为只可能唯一对应export default命令。
+```
+#### 10. 构造函数与原型对象
+## 1.5 对象原型_ proto_
+```
+对象都会有一个属性_ proto_ 指向构造函数的 prototype原型对象,之所以我们对象可以使用构造函数
+prototype原型对象的属性和方法,就是因为对象有_ proto_ 原型的存在。
+●_ proto_ 对象原型和原型对象prototype是等价的
+●proto_ 对象原型的意义就在于为对象的查找机制提供一 个方向,或者说一 条路线,但是它是一 个非标准属性,
+因此实际开发中,不可以使用这个属性，它只是内部指向原型对象prototype
 ```
