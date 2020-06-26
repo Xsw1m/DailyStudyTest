@@ -220,3 +220,11 @@ prototype原型对象的属性和方法,就是因为对象有_ proto_ 原型的�
 第四次挥手：浏览器发送给服务器，告诉服务器响应报文接受完毕，可以断开连接
 最后服务器断开连接，浏览器断开连接
 ```
+#### 12. http与https区别
+* [HTTP与HTTPS的区别](https://blog.csdn.net/JAck_chen0309/article/details/105020259?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-7.nonecase)
+```
+安全性上，HTTPS是安全超文本协议，在HTTP基础上有更强的安全性。简单来说，HTTPS是使用TLS/SSL加密的HTTP协议
+申请证书上，HTTPS需要使用ca申请证书
+传输协议上, HTTP是超文本传输协议，明文传输；HTTPS是具有安全性的 SSL 加密传输协议
+连接方式与端口上，http的连接简单，是无状态的，端口是 80； https 在http的基础上使用了ssl协议进行加密传输，端口是 443
+```
