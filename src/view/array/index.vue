@@ -19,15 +19,15 @@
 // 		},j*1000)
 // 	})(i)
 // }
-function func1() {
-  var a = 1
-}
-function func2() {
-  setTimeout(() => {
-    console.log('a():', a)
-  }, 1000);
-}
-func2()
+// function func1() {
+//   var a = 1
+// }
+// function func2() {
+//   setTimeout(() => {
+//     console.log('a():', a)
+//   }, 1000);
+// }
+// func2()
 export default {
   data () {
     return {
